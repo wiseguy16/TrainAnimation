@@ -21,10 +21,19 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let imageView1 = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
+        let imageView2 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
+        
+        imageView1.frame = CGRect(x: 100, y: 100, width: 75, height: 93)
+        imageView2.frame = CGRect(x: 400, y: 300, width: 75, height: 93)
+
         
         let curvedView = CurvedView(frame: view.frame)
         curvedView.backgroundColor = .lightGray
         view.addSubview(curvedView)
+        view.addSubview(imageView2)
+        view.addSubview(imageView1)
+
          firstTap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         
        // view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
