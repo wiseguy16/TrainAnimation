@@ -13,6 +13,8 @@
 		4A4C100C1F705B860091CBB4 /* TrainGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C100A1F705B860091CBB4 /* TrainGame.xcdatamodeld */; };
 		4A4C100E1F705B860091CBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A4C100D1F705B860091CBB4 /* Assets.xcassets */; };
 		4A4C10111F705B860091CBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4C100F1F705B860091CBB4 /* LaunchScreen.storyboard */; };
+		4A4C10191F705BE50091CBB4 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C10181F705BE50091CBB4 /* CurvedView.swift */; };
+		4A4C101B1F741AA50091CBB4 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		4A4C100D1F705B860091CBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A4C10101F705B860091CBB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A4C10121F705B860091CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4A4C10181F705BE50091CBB4 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
+		4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,8 @@
 			children = (
 				4A4C10031F705B860091CBB4 /* AppDelegate.swift */,
 				4A4C10051F705B860091CBB4 /* ViewController.swift */,
+				4A4C10181F705BE50091CBB4 /* CurvedView.swift */,
+				4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */,
 				4A4C10071F705B860091CBB4 /* Main.storyboard */,
 				4A4C100D1F705B860091CBB4 /* Assets.xcassets */,
 				4A4C100F1F705B860091CBB4 /* LaunchScreen.storyboard */,
@@ -141,6 +147,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A4C10061F705B860091CBB4 /* ViewController.swift in Sources */,
+				4A4C10191F705BE50091CBB4 /* CurvedView.swift in Sources */,
+				4A4C101B1F741AA50091CBB4 /* HelperMethods.swift in Sources */,
 				4A4C10041F705B860091CBB4 /* AppDelegate.swift in Sources */,
 				4A4C100C1F705B860091CBB4 /* TrainGame.xcdatamodeld in Sources */,
 			);
