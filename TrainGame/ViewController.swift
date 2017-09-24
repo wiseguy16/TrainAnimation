@@ -16,16 +16,24 @@ let cp4 = CGPoint(x: 500, y: 900)
 
 
 class ViewController: UIViewController {
+    
     var firstTap = UITapGestureRecognizer()
+    var otherTap = UITapGestureRecognizer()
     var trainPassCount = 0
+    var pnt1 = CGPoint()
+    var pnt2 = CGPoint()
+    var pnt3 = CGPoint()
+
+    let imageView1 = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
+    let imageView2 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let imageView1 = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
-        let imageView2 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
         
         imageView1.frame = CGRect(x: 100, y: 100, width: 75, height: 93)
         imageView2.frame = CGRect(x: 400, y: 300, width: 75, height: 93)
+        imageView1.isUserInteractionEnabled = true
 
         
         let curvedView = CurvedView(frame: view.frame)
@@ -34,10 +42,18 @@ class ViewController: UIViewController {
         view.addSubview(imageView2)
         view.addSubview(imageView1)
 
-         firstTap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        firstTap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        otherTap = UITapGestureRecognizer(target: self, action: #selector(moveObject))
         
        // view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
-        view.addGestureRecognizer(firstTap)
+        //view.addGestureRecognizer(firstTap)
+        imageView1.addGestureRecognizer(otherTap)
+        pnt1 = imageView1.center
+        pnt2.x = pnt1.x + CGFloat(700.0)
+        pnt2.y = pnt1.y
+        pnt3.x = pnt1.x + CGFloat(775.0)
+        pnt3.y = pnt1.y - CGFloat(1.0)
+
  
 //        yourFunctionName {
 //            
@@ -65,6 +81,51 @@ class ViewController: UIViewController {
         // do stuff here to determine what you want to send back.
         // we are just sending the Boolean value that was sent in "back"
         completion(true)
+    }
+    
+    func moveObject() {
+//        let timer = Timer(timeInterval: 1.0, target: self, selector: #selector(bounceTrain), userInfo: nil, repeats: true)
+//        timer.fire()
+        self.bounceTrain()
+        UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseInOut, animations: {
+            
+            self.imageView1.center = self.pnt2
+          //  self.pnt1.x = self.pnt1.x + CGFloat(100.0)
+            
+        }) { (true) in
+            UIView.animate(withDuration: 3.0, animations: {
+                
+                self.imageView2.center = self.pnt3
+                //timer.invalidate()
+                self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+            })
+        }
+        
+//        UIView.animate(withDuration: 4.0, delay: 0.0, options: [], animations: {
+//            self.bounceTrain()
+//        }) { (true) in
+//            self.imageView1.transform = .identity
+//        }
+    }
+    
+    func bounceTrain() {
+        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.autoreverse, .repeat], animations: {
+            self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
+        }) { (true) in
+            //self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
+    
+    func newBounceTrain() {
+        //
+    }
+    
+    func moveObjectWithCurve() {
+        UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseInOut, animations: { 
+            //
+        }) { (true) in
+            //
+        }
     }
     
  
