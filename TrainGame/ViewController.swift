@@ -86,13 +86,10 @@ class ViewController: UIViewController {
     }
     
     func moveObject() {
-        guard timer == nil else { return }
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
+       // guard timer == nil else { return }
+        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
         
-        // timer = Timer(timeInterval: 2.0, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
         timer?.fire()
-        //self.bounceTrain()
-        
         
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseInOut, animations: {
             
@@ -102,17 +99,10 @@ class ViewController: UIViewController {
         }) { (true) in
             self.moveCars()
         }
-        
-        
-        //        UIView.animate(withDuration: 4.0, delay: 0.0, options: [], animations: {
-        //            self.bounceTrain()
-        //        }) { (true) in
-        //            self.imageView1.transform = .identity
-        //        }
     }
     
-    /*@objc*/ func moveUp() {
-        UIView.animate(withDuration: 0.5, animations: { 
+ /*@objc*/ func moveUp() {
+        UIView.animate(withDuration: 0.4, animations: {
             self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
         }) { (true) in
             self.moveDown()
@@ -120,7 +110,7 @@ class ViewController: UIViewController {
     }
     
     func moveDown() {
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: 0.4) {
             self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
         }
     }
