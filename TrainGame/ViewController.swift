@@ -23,6 +23,7 @@ class ViewController: UIViewController {
     var pnt1 = CGPoint()
     var pnt2 = CGPoint()
     var pnt3 = CGPoint()
+    var timer: Timer?
 
     let imageView1 = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
     let imageView2 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
@@ -53,6 +54,7 @@ class ViewController: UIViewController {
         pnt2.y = pnt1.y
         pnt3.x = pnt1.x + CGFloat(775.0)
         pnt3.y = pnt1.y - CGFloat(1.0)
+        timer = Timer()
 
  
 //        yourFunctionName {
@@ -84,36 +86,69 @@ class ViewController: UIViewController {
     }
     
     func moveObject() {
-//        let timer = Timer(timeInterval: 1.0, target: self, selector: #selector(bounceTrain), userInfo: nil, repeats: true)
-//        timer.fire()
-        self.bounceTrain()
+        guard timer == nil else { return }
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
+        
+        // timer = Timer(timeInterval: 2.0, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
+        timer?.fire()
+        //self.bounceTrain()
+        
+        
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseInOut, animations: {
             
             self.imageView1.center = self.pnt2
-          //  self.pnt1.x = self.pnt1.x + CGFloat(100.0)
+            //  self.pnt1.x = self.pnt1.x + CGFloat(100.0)
             
         }) { (true) in
-            UIView.animate(withDuration: 3.0, animations: {
-                
-                self.imageView2.center = self.pnt3
-                //timer.invalidate()
-                self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
-            })
+            self.moveCars()
         }
         
-//        UIView.animate(withDuration: 4.0, delay: 0.0, options: [], animations: {
-//            self.bounceTrain()
-//        }) { (true) in
-//            self.imageView1.transform = .identity
-//        }
+        
+        //        UIView.animate(withDuration: 4.0, delay: 0.0, options: [], animations: {
+        //            self.bounceTrain()
+        //        }) { (true) in
+        //            self.imageView1.transform = .identity
+        //        }
     }
     
-    func bounceTrain() {
-        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.autoreverse, .repeat], animations: {
+    /*@objc*/ func moveUp() {
+        UIView.animate(withDuration: 0.5, animations: { 
             self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
         }) { (true) in
-            //self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+            self.moveDown()
         }
+    }
+    
+    func moveDown() {
+        UIView.animate(withDuration: 0.5) {
+            self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+    }
+    
+    func moveCars() {
+        UIView.animate(withDuration: 3.0, animations: { 
+            self.imageView2.center = self.pnt3
+        }) { (true) in
+            self.timer?.invalidate()
+        }
+    }
+    
+    
+    func bounceTrain() {
+        UIView.animate(withDuration: 0.5, animations: { 
+            self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
+        }) { (true) in
+            self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+        }
+//        UIView.animate(withDuration: 0.5) { 
+//            self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
+//
+//        }
+//        UIView.animate(withDuration: 0.5, delay: 0.0, options: [.autoreverse], animations: {
+//            self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
+//        }) { (true) in
+//            //self.imageView1.transform = CGAffineTransform(translationX: 0, y: 0)
+//        }
     }
     
     func newBounceTrain() {
