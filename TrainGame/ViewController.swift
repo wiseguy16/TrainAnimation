@@ -31,6 +31,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(showSettings), name: NSNotification.Name("ShowSettings"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showProfile), name: NSNotification.Name("ShowProfile"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showLogin), name: NSNotification.Name("ShowSignIn"), object: nil)
         
         imageView1.frame = CGRect(x: 100, y: 100, width: 75, height: 93)
         imageView2.frame = CGRect(x: 400, y: 300, width: 75, height: 93)
@@ -77,6 +80,18 @@ class ViewController: UIViewController {
             }
         })
 
+    }
+    
+    @objc func showSettings() {
+        performSegue(withIdentifier: "SettingsSegue", sender: nil)
+    }
+    
+    @objc func showProfile() {
+        performSegue(withIdentifier: "ProfileSegue", sender: nil)
+    }
+    
+    @objc func showLogin() {
+        performSegue(withIdentifier: "LoginSegue", sender: nil)
     }
     
     @IBAction func menuToggleTapped(_ sender: UIBarButtonItem) {

@@ -34,8 +34,9 @@ class ContainerViewController: UIViewController {
             sideMenuIsOpen = true
             sideMenuConstraint.constant = 0
         }
-        self.view.setNeedsDisplay()
-        
+        UIView.animate(withDuration: 0.3) { 
+            self.view.layoutIfNeeded()
+        }        
     }
     
 
