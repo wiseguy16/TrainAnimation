@@ -67,6 +67,7 @@ class ViewController: UIViewController {
             print("completion happening")
         }
         
+        
         method(completion: { (success) -> Void in
             print("Second line of code executed")
             if success { // this will be equal to whatever value is set in this method call
@@ -77,6 +78,12 @@ class ViewController: UIViewController {
         })
 
     }
+    
+    @IBAction func menuToggleTapped(_ sender: UIBarButtonItem) {
+        print("menu toggled")
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+    }
+    
     
     func method(completion: (Bool) -> ()) {
         print("First line of code executed")
