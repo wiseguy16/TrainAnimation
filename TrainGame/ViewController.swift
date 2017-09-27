@@ -87,21 +87,17 @@ class ViewController: UIViewController {
     
     func moveObject() {
        // guard timer == nil else { return }
-        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(moveUp), userInfo: nil, repeats: true)
-        
+        timer = Timer.scheduledTimer(timeInterval: 0.8, target: self, selector: #selector(moveUpThenDown), userInfo: nil, repeats: true)
         timer?.fire()
         
         UIView.animate(withDuration: 4.0, delay: 0.0, options: .curveEaseInOut, animations: {
-            
             self.imageView1.center = self.pnt2
-            //  self.pnt1.x = self.pnt1.x + CGFloat(100.0)
-            
         }) { (true) in
             self.moveCars()
         }
     }
     
- /*@objc*/ func moveUp() {
+ /*@objc*/ func moveUpThenDown() {
         UIView.animate(withDuration: 0.4, animations: {
             self.imageView1.transform = CGAffineTransform(translationX: 0, y: -30)
         }) { (true) in

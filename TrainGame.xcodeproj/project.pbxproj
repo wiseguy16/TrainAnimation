@@ -15,6 +15,9 @@
 		4A4C10111F705B860091CBB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A4C100F1F705B860091CBB4 /* LaunchScreen.storyboard */; };
 		4A4C10191F705BE50091CBB4 /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C10181F705BE50091CBB4 /* CurvedView.swift */; };
 		4A4C101B1F741AA50091CBB4 /* HelperMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */; };
+		4A4C10951F7943E10091CBB4 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C10941F7943E10091CBB4 /* RoundButton.swift */; };
+		4A4C10B71F7C021A0091CBB4 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C10B61F7C021A0091CBB4 /* ContainerViewController.swift */; };
+		4A4C10B91F7C03F40091CBB4 /* SideMenuTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4C10B81F7C03F40091CBB4 /* SideMenuTableVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		4A4C10121F705B860091CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4A4C10181F705BE50091CBB4 /* CurvedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
 		4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperMethods.swift; sourceTree = "<group>"; };
+		4A4C10941F7943E10091CBB4 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
+		4A4C10B61F7C021A0091CBB4 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		4A4C10B81F7C03F40091CBB4 /* SideMenuTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +68,9 @@
 			children = (
 				4A4C10031F705B860091CBB4 /* AppDelegate.swift */,
 				4A4C10051F705B860091CBB4 /* ViewController.swift */,
+				4A4C10B61F7C021A0091CBB4 /* ContainerViewController.swift */,
+				4A4C10B81F7C03F40091CBB4 /* SideMenuTableVC.swift */,
+				4A4C10941F7943E10091CBB4 /* RoundButton.swift */,
 				4A4C10181F705BE50091CBB4 /* CurvedView.swift */,
 				4A4C101A1F741AA50091CBB4 /* HelperMethods.swift */,
 				4A4C10071F705B860091CBB4 /* Main.storyboard */,
@@ -146,7 +155,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A4C10951F7943E10091CBB4 /* RoundButton.swift in Sources */,
 				4A4C10061F705B860091CBB4 /* ViewController.swift in Sources */,
+				4A4C10B71F7C021A0091CBB4 /* ContainerViewController.swift in Sources */,
+				4A4C10B91F7C03F40091CBB4 /* SideMenuTableVC.swift in Sources */,
 				4A4C10191F705BE50091CBB4 /* CurvedView.swift in Sources */,
 				4A4C101B1F741AA50091CBB4 /* HelperMethods.swift in Sources */,
 				4A4C10041F705B860091CBB4 /* AppDelegate.swift in Sources */,
@@ -316,6 +328,7 @@
 				4A4C10171F705B860091CBB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
