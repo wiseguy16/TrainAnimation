@@ -34,6 +34,13 @@ class SideMenuTableVC: UITableViewController {
         }
         //
     }
+    
+    
+    @IBAction func doneTapped(_ sender: UIBarButtonItem) {
+        
+        NotificationCenter.default.post(name: NSNotification.Name("ToggleSideMenu"), object: nil)
+
+    }
 
 
 }

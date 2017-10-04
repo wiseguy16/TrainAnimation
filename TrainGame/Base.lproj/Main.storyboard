@@ -37,7 +37,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="-1288"/>
+            <point key="canvasLocation" x="1716" y="-1288.6056971514245"/>
         </scene>
         <!--Side Menu TableVC-->
         <scene sceneID="tA7-Fx-tpN">
@@ -112,10 +112,17 @@
                             <outlet property="delegate" destination="faA-Jj-Ihf" id="Kle-g1-SUw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="UXJ-ML-n5d">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Ki8-Ra-mi2">
+                            <connections>
+                                <action selector="doneTapped:" destination="faA-Jj-Ihf" id="0Fj-Qu-8E7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vcb-OK-8MY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1078" y="-1288"/>
+            <point key="canvasLocation" x="-355.19999999999999" y="-1288.6056971514245"/>
         </scene>
         <!--Container View Controller-->
         <scene sceneID="6zr-hS-IAG">
@@ -141,7 +148,7 @@
                                     <constraint firstAttribute="width" constant="240" id="huX-ko-B4W"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="faA-Jj-Ihf" kind="embed" id="OML-O3-ByV"/>
+                                    <segue destination="4X6-QI-wW7" kind="embed" id="OML-O3-ByV"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -180,7 +187,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Fb-t0-ek1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="180" y="-1287"/>
+            <point key="canvasLocation" x="903.20000000000005" y="-1287.7061469265368"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="2S7-f0-846">
@@ -262,6 +269,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lFB-dt-ER9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2167" y="-576"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5gF-ji-ESq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4X6-QI-wW7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p0K-Zy-7Tj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="faA-Jj-Ihf" kind="relationship" relationship="rootViewController" id="JW6-Bo-Fav"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EzX-cA-Wby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1078.4000000000001" y="-1288.6056971514245"/>
         </scene>
     </scenes>
 </document>
