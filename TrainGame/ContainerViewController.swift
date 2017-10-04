@@ -29,7 +29,7 @@ class ContainerViewController: UIViewController {
         print("Recieved notification")
         if sideMenuIsOpen {
             sideMenuIsOpen = false
-            sideMenuConstraint.constant = -240
+            sideMenuConstraint.constant = -360
         } else {
             sideMenuIsOpen = true
             sideMenuConstraint.constant = 0
