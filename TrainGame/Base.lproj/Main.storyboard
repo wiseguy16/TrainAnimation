@@ -129,6 +129,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-sN-62q">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <segue destination="CMg-GG-V7g" kind="embed" id="m3q-hm-7Qq"/>
+                                </connections>
+                            </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgj-Ww-xB1">
                                 <rect key="frame" x="-240" y="0.0" width="240" height="667"/>
                                 <constraints>
@@ -138,22 +144,16 @@
                                     <segue destination="faA-Jj-Ihf" kind="embed" id="OML-O3-ByV"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KR1-sN-62q">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="CMg-GG-V7g" kind="embed" id="m3q-hm-7Qq"/>
-                                </connections>
-                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="KR1-sN-62q" firstAttribute="width" secondItem="d7o-bh-N1l" secondAttribute="width" id="6C1-C7-EpL"/>
                             <constraint firstItem="Wgj-Ww-xB1" firstAttribute="top" secondItem="d7o-bh-N1l" secondAttribute="top" id="9SA-ga-0HF"/>
                             <constraint firstItem="7BK-kf-kTD" firstAttribute="top" secondItem="KR1-sN-62q" secondAttribute="bottom" id="FPt-Fc-ltV"/>
                             <constraint firstItem="7BK-kf-kTD" firstAttribute="top" secondItem="Wgj-Ww-xB1" secondAttribute="bottom" id="FQt-n6-CPv"/>
                             <constraint firstItem="KR1-sN-62q" firstAttribute="top" secondItem="d7o-bh-N1l" secondAttribute="top" id="V5j-Gg-4Iu"/>
                             <constraint firstItem="Wgj-Ww-xB1" firstAttribute="leading" secondItem="d7o-bh-N1l" secondAttribute="leading" constant="-240" id="Wzn-tA-mAN"/>
-                            <constraint firstItem="KR1-sN-62q" firstAttribute="leading" secondItem="Wgj-Ww-xB1" secondAttribute="trailing" id="kOg-cX-w6T"/>
+                            <constraint firstItem="KR1-sN-62q" firstAttribute="centerX" secondItem="d7o-bh-N1l" secondAttribute="centerX" id="rwg-1z-kcb"/>
+                            <constraint firstItem="KR1-sN-62q" firstAttribute="width" secondItem="d7o-bh-N1l" secondAttribute="width" id="tJK-8R-nbz"/>
                         </constraints>
                     </view>
                     <connections>
