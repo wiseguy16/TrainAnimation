@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     
     var firstTap = UITapGestureRecognizer()
     var otherTap = UITapGestureRecognizer()
+    var circleTap = UITapGestureRecognizer()
     var trainPassCount = 0
     var pnt1 = CGPoint()
     var pnt2 = CGPoint()
@@ -27,6 +28,8 @@ class ViewController: UIViewController {
 
     let imageView1 = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
     let imageView2 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
+    let imageView3 = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
+
 
 
     override func viewDidLoad() {
@@ -38,6 +41,8 @@ class ViewController: UIViewController {
         imageView1.frame = CGRect(x: 100, y: 100, width: 75, height: 93)
         imageView2.frame = CGRect(x: 400, y: 300, width: 75, height: 93)
         imageView1.isUserInteractionEnabled = true
+        
+        imageView3.frame = CGRect(x: 350, y: 350, width: 75, height: 93)
 
         
         let curvedView = CurvedView(frame: view.frame)
@@ -48,10 +53,17 @@ class ViewController: UIViewController {
 
         firstTap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         otherTap = UITapGestureRecognizer(target: self, action: #selector(moveObject))
+        circleTap = UITapGestureRecognizer(target: self, action: #selector(moveInCircle))
         
-       // view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        //view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
         //view.addGestureRecognizer(firstTap)
         imageView1.addGestureRecognizer(otherTap)
+        
+        imageView3.addGestureRecognizer(circleTap)
+        imageView3.isUserInteractionEnabled = true
+        view.addSubview(imageView3)
+
+
         pnt1 = imageView1.center
         pnt2.x = pnt1.x + CGFloat(700.0)
         pnt2.y = pnt1.y
@@ -105,6 +117,18 @@ class ViewController: UIViewController {
         // do stuff here to determine what you want to send back.
         // we are just sending the Boolean value that was sent in "back"
         completion(true)
+    }
+    
+    func moveInCircle() {
+//        let imageView = UIImageView(image: #imageLiteral(resourceName: "trainCars"))
+//        imageView.frame = CGRect(x: 300, y: 300, width: 75, height: 93)
+        
+        let newAnimation = makeAnimationForTrain(aPath: circularPath().cgPath)
+        imageView3.layer.add(newAnimation, forKey: nil)
+        
+        //view.addSubview(imageView)
+
+        
     }
     
     func moveObject() {
@@ -199,10 +223,12 @@ class ViewController: UIViewController {
         //let image = drand48() > 0.5 ? #imageLiteral(resourceName: "trainEngine") : #imageLiteral(resourceName: "trainCars")
         let imageView = UIImageView(image: #imageLiteral(resourceName: "trainEngine"))
         imageView.frame = CGRect(x: 0, y: 0, width: 75, height: 93)
+        
         let newAnimation = makeAnimationForTrain(aPath: backwardsPath().cgPath)
         imageView.layer.add(newAnimation, forKey: nil)
         
         view.addSubview(imageView)
+        
         delay(bySeconds: 4.0, dispatchLevel: .background) {
             // delayed code that will run on background thread
             animationFinished()
@@ -325,6 +351,36 @@ func forwardsPath() -> UIBezierPath {
     path.addCurve(to: endPoint, controlPoint1: cp4, controlPoint2: cp3)
     return path
 }
+
+func circularPath() -> UIBezierPath {
+   // let screenSize = UIScreen.main.bounds
+    //let screenEndX = screenSize.width/2
+    //let screenBeginX = screenSize.width - screenSize.width
+    //let screenHeight = screenSize.height
+    //let halfHeight = screenHeight/2
+    
+    let cp10 = CGPoint(x: 350, y: 350)
+    let cp20 = CGPoint(x: 600, y: 450)
+    let cp30 = CGPoint(x: 600, y: 600)
+    let cp40 = CGPoint(x: 350, y: 750)
+    let cp50 = CGPoint(x: 150, y: 450)
+    let cp60 = CGPoint(x: 150, y: 600)
+
+    
+    let path = UIBezierPath()
+    path.move(to: cp10)
+    path.addCurve(to: cp40, controlPoint1: cp20, controlPoint2: cp30)
+    path.addCurve(to: cp10, controlPoint1: cp60, controlPoint2: cp50)
+   // path.addArc(withCenter: cp30, radius: 75, startAngle: 45, endAngle: 45, clockwise: true)
+    
+//    path.move(to: CGPoint(x: screenBeginX, y: halfHeight))
+//    let endPoint = CGPoint(x: screenEndX , y: halfHeight)
+    
+//    path.addCurve(to: endPoint, controlPoint1: cp1, controlPoint2: cp2)
+    
+    return path
+}
+
 
 func forwardsPath2() -> UIBezierPath {
     let screenSize = UIScreen.main.bounds
