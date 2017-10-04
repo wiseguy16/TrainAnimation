@@ -36,6 +36,11 @@ class CurvedView: UIView {
         let path2 = forwardsPath()
         path2.lineWidth = 3
         path2.stroke()
+        
+        let path3 = circularPath()
+        path3.lineWidth = 3
+        path3.stroke()
+
 
         
     }
